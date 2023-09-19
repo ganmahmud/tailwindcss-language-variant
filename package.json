@@ -1,0 +1,14 @@
+{
+  "name": "language-variant",
+  "version": "1.0.0",
+  "description": "A tailwindcss plugin custom language variant",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "tailwind"
+  ],
+  "author": "GAN MAHMUD",
+  "license": "MIT"
+}
