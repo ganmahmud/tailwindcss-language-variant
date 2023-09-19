@@ -1,13 +1,10 @@
 {
-  "name": "language-variant",
+  "name": "@ganmahmud/language-variant",
   "version": "1.0.0",
   "description": "A tailwindcss plugin custom language variant",
   "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
   "keywords": [
-    "tailwind"
+    "tailwind", "tailwindcss", "tailwind-plugin", "language-variant", "localization", "i18n", "bangla"
   ],
   "author": "GAN MAHMUD",
   "license": "MIT"
