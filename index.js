@@ -1,6 +1,6 @@
 modules.exports = function ({ addVariant, e, config }) {
     if (!config('theme.languages')) {
-        config('theme.languages', ['en']);
+        config('theme.languages', ['bn']);
     }
     config('theme.languages').forEach((lang) => {
         addVariant(`lang-${lang}`, ({ modifySelectors, separator }) => {
