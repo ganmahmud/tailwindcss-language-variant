@@ -6,6 +6,10 @@
   "scripts": {
     "test": "jest"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ganmahmud/tailwindcss-language-variant.git"
+  },
   "keywords": [
     "tailwind",
     "tailwindcss",
