@@ -14,68 +14,69 @@ expect.extend({
     toMatchCss: cssMatcher,
 });
 
-
-
-test('SHOULD generate lang-bn variant without language config', async () => {
-    const input = `
-        .test {
-            @apply lang-bn:font-bold;
-        }
-    `;
-
-    const result = await postcss(tailwindcss(config)).process(input, {
-        from: undefined,
-    });
-
-    expect(result.css).toMatchCss(`
-        html[lang="bn"] .test {
-            font-weight: 700
-        }
-    `);
+describe('tailwindcss-language-variant', () => { 
+    test('SHOULD generate lang-bn variant without language config', async () => {
+        const input = `
+            .test {
+                @apply lang-bn:font-bold;
+            }
+        `;
     
-});
-
-test('SHOULD generate lang-bn variant with language config set to en', async () => {
-    config.theme.languages = ['en'];
-    const input = `
-        .test {
-            @apply lang-en:font-bold;
-        }
-    `;
-
-    const result = await postcss(tailwindcss(config)).process(input, {
-        from: undefined,
-    });
-
-    expect(result.css).toMatchCss(`
-        html[lang="en"] .test {
-            font-weight: 700
-        }
-    `);
+        const result = await postcss(tailwindcss(config)).process(input, {
+            from: undefined,
+        });
+    
+        expect(result.css).toMatchCss(`
+            html[lang="bn"] .test {
+                font-weight: 700
+            }
+        `);
         
-});
-
-test('SHOULD generate lang-bn and lang-en variant with language config set to both', async () => {
-    config.theme.languages = ['bn', 'en'];
-    const input = `
-        .test {
-            @apply lang-en:font-bold;
-            @apply lang-bn:font-bold;
-        }
-    `;
-
-    const result = await postcss(tailwindcss(config)).process(input, {
-        from: undefined,
     });
-
-    expect(result.css).toMatchCss(`
-        html[lang="en"] .test {
-            font-weight: 700
-        }
-        html[lang="bn"] .test {
-            font-weight: 700
-        }
-    `);
-        
+    
+    test('SHOULD generate lang-bn variant with language config set to en', async () => {
+        config.theme.languages = ['en'];
+        const input = `
+            .test {
+                @apply lang-en:font-bold;
+            }
+        `;
+    
+        const result = await postcss(tailwindcss(config)).process(input, {
+            from: undefined,
+        });
+    
+        expect(result.css).toMatchCss(`
+            html[lang="en"] .test {
+                font-weight: 700
+            }
+        `);
+            
+    });
+    
+    test('SHOULD generate lang-bn and lang-en variant with language config set to both', async () => {
+        config.theme.languages = ['bn', 'en'];
+        const input = `
+            .test {
+                @apply lang-en:font-bold;
+                @apply lang-bn:font-bold;
+            }
+        `;
+    
+        const result = await postcss(tailwindcss(config)).process(input, {
+            from: undefined,
+        });
+    
+        expect(result.css).toMatchCss(`
+            html[lang="en"] .test {
+                font-weight: 700
+            }
+            html[lang="bn"] .test {
+                font-weight: 700
+            }
+        `);
+            
+    });
 });
+
 
