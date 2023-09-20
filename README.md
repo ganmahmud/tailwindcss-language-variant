@@ -26,7 +26,7 @@ This Tailwind CSS plugin adds a new variant called `lang-{language}` that can be
       ],
     }
     ```
-3. The plugin assumes that you have a `lang` attribute in your HTML. With the default configuration, you can use the `lang-bn`:
+3. The plugin assumes that you have a `lang` attribute in your HTML tag and it is handles by your application or website. You can then use the `lang-{language}` variant in your HTML like this:
 
     ```html
     <html lang="bn">
