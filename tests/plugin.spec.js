@@ -28,7 +28,7 @@ test('SHOULD generate lang-bn variant without language config', async () => {
     });
 
     expect(result.css).toMatchCss(`
-        [lang="bn"] .test {
+        html[lang="bn"] .test {
             font-weight: 700
         }
     `);
@@ -48,7 +48,7 @@ test('SHOULD generate lang-bn variant with language config set to en', async () 
     });
 
     expect(result.css).toMatchCss(`
-        [lang="en"] .test {
+        html[lang="en"] .test {
             font-weight: 700
         }
     `);
@@ -69,10 +69,10 @@ test('SHOULD generate lang-bn and lang-en variant with language config set to bo
     });
 
     expect(result.css).toMatchCss(`
-        [lang="en"] .test {
+        html[lang="en"] .test {
             font-weight: 700
         }
-        [lang="bn"] .test {
+        html[lang="bn"] .test {
             font-weight: 700
         }
     `);

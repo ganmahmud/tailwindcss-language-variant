@@ -6,7 +6,7 @@ const TailwindLangugeVariantPlugin = plugin(function ({ addVariant, e, config })
     languages.forEach((lang) => {
         addVariant(`lang-${lang}`, ({ modifySelectors, separator }) => {
             modifySelectors(({ className }) => {
-                return `[lang="${lang}"] .${e(`lang-${lang}${separator}${className}`)}`;
+                return `html[lang="${lang}"] .${e(`lang-${lang}${separator}${className}`)}`;
             });
         });
     });
