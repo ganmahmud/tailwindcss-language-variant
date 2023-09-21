@@ -44,4 +44,6 @@ This Tailwind CSS plugin adds a new variant called `lang-{language}` that can be
     }
     ```
 
-    
+    ## Changelog
+    -  `1.0.1`: Fixed languge config type issue
+    -  `1.0.0`: Initial release 

@@ -1,6 +1,6 @@
 {
   "name": "@ganmahmud/tailwindcss-language-variant",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tailwind CSS plugin to generate language variant utilities.",
   "main": "index.js",
   "scripts": {
