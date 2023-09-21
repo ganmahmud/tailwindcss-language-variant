@@ -15,6 +15,66 @@ expect.extend({
 });
 
 describe('tailwindcss-language-variant', () => { 
+    test('SHOULD generate lang-bn variant with language config set to empty array', async () => {
+        config.theme.languages = [];
+        const input = `
+            .test {
+                @apply lang-bn:font-bold;
+            }
+        `;
+    
+        const result = await postcss(tailwindcss(config)).process(input, {
+            from: undefined,
+        });
+    
+        expect(result.css).toMatchCss(`
+            html[lang="bn"] .test {
+                font-weight: 700
+            }
+        `);
+            
+    });
+
+    test('SHOULD generate lang-bn variant with language config set to array objects', async () => {
+        config.theme.languages = [{bn: 'bn'}, {en: 'en'}];
+        const input = `
+            .test {
+                @apply lang-bn:font-bold;
+            }
+        `;
+    
+        const result = await postcss(tailwindcss(config)).process(input, {
+            from: undefined,
+        });
+    
+        expect(result.css).toMatchCss(`
+            html[lang="bn"] .test {
+                font-weight: 700
+            }
+        `);
+            
+    });
+
+    test('SHOULD generate lang-bn variant with language config set as string', async () => {
+        config.theme.languages = 'bn, en';
+        const input = `
+            .test {
+                @apply lang-bn:font-bold;
+            }
+        `;
+    
+        const result = await postcss(tailwindcss(config)).process(input, {
+            from: undefined,
+        });
+    
+        expect(result.css).toMatchCss(`
+            html[lang="bn"] .test {
+                font-weight: 700
+            }
+        `);
+            
+    });
+    
     test('SHOULD generate lang-bn variant without language config', async () => {
         const input = `
             .test {
